@@ -1,5 +1,5 @@
 import { create } from 'zustand';
-import { persist } from 'zustand/middleware';
+import { persist, createJSONStorage } from 'zustand/middleware';
 
 const useBookStore = create(
     persist(
@@ -74,6 +74,33 @@ const useBookStore = create(
         }),
         {
             name: 'bookshelf-storage',
+            storage: createJSONStorage(() => ({
+                getItem: async (name) => {
+                    try {
+                        const response = await fetch('/api/data');
+                        if (!response.ok) return null;
+                        const data = await response.json();
+                        // Wrap state for Zustand persist
+                        return JSON.stringify({ state: data, version: 0 });
+                    } catch (e) {
+                        console.error('Failed to fetch from server:', e);
+                        return null;
+                    }
+                },
+                setItem: async (name, value) => {
+                    try {
+                        const parsed = JSON.parse(value);
+                        await fetch('/api/data', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify(parsed.state)
+                        });
+                    } catch (e) {
+                        console.error('Failed to save to server:', e);
+                    }
+                },
+                removeItem: () => { }
+            })),
         }
     )
 );

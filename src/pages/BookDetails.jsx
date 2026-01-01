@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Calendar, Save, Trash2, Tag, BookHeart, Edit2, X, Plus, Check } from 'lucide-react';
+import { ArrowLeft, BookOpen, Calendar, Save, Trash2, Tag, BookHeart } from 'lucide-react';
 import useBookStore from '../store/useBookStore';
 import { getBookDetails, getAuthorBooks } from '../services/googleBooks';
 import { useNotification } from '../context/NotificationContext';
+import TagControl from '../components/TagControl';
 
 const BookDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { library, wishlist, updateBook, addToLibrary, addToWishlist, removeFromLibrary, removeFromWishlist, addTag, tags: globalTags } = useBookStore();
+    const { library, wishlist, updateBook, addToLibrary, addToWishlist, removeFromLibrary, removeFromWishlist } = useBookStore();
 
     const [book, setBook] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -16,8 +17,6 @@ const BookDetails = () => {
     const [notes, setNotes] = useState('');
     const [readDate, setReadDate] = useState('');
     const [isDirty, setIsDirty] = useState(false);
-    const [isEditingTags, setIsEditingTags] = useState(false);
-    const [newTag, setNewTag] = useState('');
 
     const inLibrary = library.find(b => b.id === id);
     const inWishlist = wishlist.find(b => b.id === id);
@@ -72,34 +71,6 @@ const BookDetails = () => {
                 setIsDirty(false);
                 showNotification('Book added to library and notes saved!', 'success');
             }
-        }
-    };
-
-    const handleAddTag = () => {
-        if (!newTag.trim()) return;
-        const tag = newTag.trim();
-        const currentTags = book.tags || [];
-        if (!currentTags.includes(tag)) {
-            const updatedTags = [...currentTags, tag];
-            updateBook(id, { tags: updatedTags });
-            addTag(tag); // Add to global pool
-            if (!inLibrary) {
-                // For non-library books, we might just update local state or prompt?
-                // Current requirement implies editing tags "on the book page". If not in library, changes aren't persisted comfortably.
-                // Assuming "inLibrary" context for editing.
-                // If not in library, update local 'book' state only?
-                setBook(prev => ({ ...prev, tags: updatedTags }));
-            }
-        }
-        setNewTag('');
-    };
-
-    const handleRemoveTag = (tagToRemove) => {
-        const currentTags = book.tags || [];
-        const updatedTags = currentTags.filter(t => t !== tagToRemove);
-        updateBook(id, { tags: updatedTags });
-        if (!inLibrary) {
-            setBook(prev => ({ ...prev, tags: updatedTags }));
         }
     };
 
@@ -160,66 +131,14 @@ const BookDetails = () => {
                                 {info.categories?.join(', ')}
                             </div>
                             <div>
-                                <div className="flex justify-between items-center">
-                                    <span className="block font-medium text-gray-700">Tags</span>
-                                    {inLibrary && (
-                                        <button
-                                            onClick={() => setIsEditingTags(!isEditingTags)}
-                                            className="text-gray-400 hover:text-indigo-600 focus:outline-none"
-                                            title="Edit Tags"
-                                        >
-                                            {isEditingTags ? <Check className="h-4 w-4" /> : <Edit2 className="h-4 w-4" />}
-                                        </button>
-                                    )}
-                                </div>
-
-                                {isEditingTags ? (
-                                    <div className="mt-2 space-y-2">
-                                        <div className="flex flex-wrap gap-2">
-                                            {(book.tags || []).map((tag, idx) => (
-                                                <span key={idx} className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-indigo-100 text-indigo-800">
-                                                    {tag}
-                                                    <button
-                                                        onClick={() => handleRemoveTag(tag)}
-                                                        className="ml-1.5 inline-flex text-indigo-500 hover:text-indigo-900 focus:outline-none"
-                                                    >
-                                                        <X className="h-3 w-3" />
-                                                    </button>
-                                                </span>
-                                            ))}
-                                        </div>
-                                        <div className="flex gap-2">
-                                            <input
-                                                type="text"
-                                                value={newTag}
-                                                onChange={(e) => setNewTag(e.target.value)}
-                                                onKeyDown={(e) => e.key === 'Enter' && handleAddTag()}
-                                                placeholder="Add tag..."
-                                                list="global-tags"
-                                                className="flex-1 min-w-0 block w-full px-3 py-1.5 rounded-md border-gray-300 text-sm focus:ring-indigo-500 focus:border-indigo-500 border"
-                                            />
-                                            <datalist id="global-tags">
-                                                {globalTags.map(t => <option key={t} value={t} />)}
-                                            </datalist>
-                                            <button
-                                                onClick={handleAddTag}
-                                                className="inline-flex items-center px-2 py-1.5 border border-transparent text-xs font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700"
-                                            >
-                                                <Plus className="h-4 w-4" />
-                                            </button>
-                                        </div>
-                                    </div>
-                                ) : (
-                                    <div className="flex flex-wrap gap-1 mt-1">
-                                        {(book.tags && book.tags.length > 0) ? book.tags.map((tag, idx) => (
-                                            <span key={idx} className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-indigo-100 text-indigo-800">
-                                                {tag}
-                                            </span>
-                                        )) : (
-                                            <span className="text-xs text-gray-400 italic">No tags</span>
-                                        )}
-                                    </div>
-                                )}
+                                <TagControl
+                                    tags={book.tags || []}
+                                    canEdit={!!inLibrary}
+                                    onTagsChange={(newTags) => {
+                                        if (inLibrary) updateBook(id, { tags: newTags });
+                                        setBook(prev => ({ ...prev, tags: newTags }));
+                                    }}
+                                />
                             </div>
                         </div>
 

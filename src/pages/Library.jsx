@@ -2,13 +2,19 @@ import React, { useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Tag, Calendar, BookOpen, Trash2, Edit } from 'lucide-react';
 import useBookStore from '../store/useBookStore';
+import TagControl from '../components/TagControl';
 
 const Library = () => {
-    const { library, tags, removeFromLibrary, updateBook } = useBookStore();
+    const { library, removeFromLibrary, updateBook } = useBookStore();
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedTag, setSelectedTag] = useState(null);
     const [sortConfig, setSortConfig] = useState({ key: 'readDate', direction: 'desc' });
     const [expandedRows, setExpandedRows] = useState(new Set());
+
+    const uniqueTags = useMemo(() => {
+        const allTags = new Set(library.flatMap(book => book.tags || []));
+        return Array.from(allTags).sort();
+    }, [library]);
 
     const filteredBooks = useMemo(() => {
         let books = [...library];
@@ -105,7 +111,7 @@ const Library = () => {
                     >
                         All
                     </button>
-                    {tags.map(tag => (
+                    {uniqueTags.map(tag => (
                         <button
                             key={tag}
                             onClick={() => setSelectedTag(tag === selectedTag ? null : tag)}
@@ -204,17 +210,14 @@ const Library = () => {
                                             )}
                                         </td>
                                         <td className="px-6 py-4 text-sm text-gray-500 align-top">
-                                            <div className="flex flex-wrap gap-1">
-                                                {book.tags && book.tags.map((tag, idx) => (
-                                                    <span key={idx} className="inline-flex items-center px-2 py-0.5 rounded text-xs font-medium bg-gray-100 text-gray-800">
-                                                        {tag}
-                                                    </span>
-                                                ))}
-                                            </div>
+                                            <TagControl
+                                                tags={book.tags || []}
+                                                onTagsChange={(newTags) => updateBook(book.id, { tags: newTags })}
+                                            />
                                         </td>
                                         <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium align-top">
                                             <button
-                                                onClick={() => { if (window.confirm('Delete this book?')) removeFromLibrary(book.id) }}
+                                                onClick={() => { if (window.confirm(`Delete "${info.title}"?`)) removeFromLibrary(book.id) }}
                                                 className="text-red-600 hover:text-red-900"
                                             >
                                                 <Trash2 className="h-4 w-4" />

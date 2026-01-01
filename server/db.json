@@ -1,0 +1,115 @@
+{
+  "library": [
+    {
+      "id": "qgA-zgEACAAJ",
+      "volumeInfo": {
+        "title": "Kubernetes Networking",
+        "subtitle": "A Deep Dive",
+        "authors": [
+          "James Strong",
+          "Vallery Lancey"
+        ],
+        "publisher": "O'Reilly Media",
+        "publishedDate": "2021-09-30",
+        "description": "Kubernetes Networking is an essential guide for anyone who wants to deploy, manage, or troubleshoot a production scale Kubernetes network. Understanding Kubernetes clusters is not enough to operate Kubernetes at scale. Every layer of the stack--the network, operating system, and Kubernetes--depends on the layer below. Successful administrators need to understand each layer and how it works across deployments on-prim, in the cloud, and with managed services. Kubernetes Networking clearly guides administrators through the layers of complexity and abstraction that come with running a Kubernetes network. It covers: The Kubernetes networking model The CNCF Container Network Interface Project and how to choose the best interface for your clusters The networking and Linux primitives that power Kubernetes How to quickly troubleshoot networking issues and prevent downtime Cloud networking and Kubernetes with the three major providers: AWS, GCP, and Azure The pros and cons of various network tools--and how to select the best ones for your stack",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_10",
+            "identifier": "1492081655"
+          },
+          {
+            "type": "ISBN_13",
+            "identifier": "9781492081654"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": false
+        },
+        "pageCount": 300,
+        "printType": "BOOK",
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "preview-1.0.0",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=qgA-zgEACAAJ&printsec=frontcover&img=1&zoom=5&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=qgA-zgEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=qgA-zgEACAAJ&dq=Networking+and+Kubernetes&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=qgA-zgEACAAJ&dq=Networking+and+Kubernetes&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Kubernetes_Networking.html?hl=&id=qgA-zgEACAAJ"
+      },
+      "readDate": "2026-01-01",
+      "tags": [
+        "Kubernetes"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "r6M4EQAAQBAJ",
+      "volumeInfo": {
+        "title": "Empire of AI",
+        "subtitle": "Dreams and Nightmares in Sam Altman's OpenAI",
+        "authors": [
+          "Karen Hao"
+        ],
+        "publisher": "Penguin",
+        "publishedDate": "2025-05-20",
+        "description": "A New York Times Notable Book • Finalist for the National Book Critics Circle Award • An Instant New York Times Bestseller • Named a Best Book of the Year by Smithsonian and Scientific American “A bestselling page-turner that has made waves not just in Silicon Valley but around the world . . . With Empire of AI, Hao is fundamentally shaping many people’s perceptions and understanding of the company at the center of the AI revolution.” —TIME Magazine, “TIME100 AI 2025” “Excellent and deeply reported.” —Tim Wu, The New York Times “Startling and intensely researched . . . an essential account of how OpenAI and ChatGPT came to be and the catastrophic places they will likely take us.” —Vulture From a brilliant longtime AI insider with intimate access to the world of Sam Altman's OpenAI from the beginning, an eye-opening account of arguably the most fateful tech arms race in history, reshaping the planet in real time, from the cockpit of the company that is driving the frenzy When AI expert and investigative journalist Karen Hao first began covering OpenAI in 2019, she thought they were the good guys. Founded as a nonprofit with safety enshrined as its core mission, the organization was meant, its leader Sam Altman told us, to act as a check against more purely mercantile, and potentially dangerous, forces. What could go wrong? Over time, Hao began to wrestle ever more deeply with that question. Increasingly, she realized that the core truth of this massively disruptive sector is that its vision of success requires an almost unprecedented amount of resources: the “compute” power of high-end chips and the processing capacity to create massive large language models, the sheer volume of data that needs to be amassed at scale, the humans “cleaning up” that data for sweatshop wages throughout the Global South, and a truly alarming spike in the usage of energy and water underlying it all. The truth is that we have entered a new and ominous age of empire: only a small handful of globally scaled companies can even enter the field of play. At the head of the pack with its ChatGPT breakthrough, how would OpenAI resist such temptations? Spoiler alert: it didn’t. Armed with Microsoft’s billions, OpenAI is setting a breakneck pace, chased by a small group of the most valuable companies in human history—toward what end, not even they can define. All this time, Hao has maintained her deep sourcing within the company and the industry, and so she was in intimate contact with the story that shocked the entire tech industry—Altman’s sudden firing and triumphant return. The behind-the-scenes story of what happened, told here in full for the first time, is revelatory of who the people controlling this technology really are. But this isn’t just the story of a single company, however fascinating it is. The g forces pressing down on the people of OpenAI are deforming the judgment of everyone else too—as such forces do. Naked power finds the ideology to cloak itself; no one thinks they’re the bad guy. But in the meantime, as Hao shows through intrepid reporting on the ground around the world, the enormous wheels of extraction grind on. By drawing on the viewpoints of Silicon Valley engineers, Kenyan data laborers, and Chilean water activists, Hao presents the fullest picture of AI and its impact we’ve seen to date, alongside a trenchant analysis of where things are headed. An astonishing eyewitness view from both up in the command capsule of the new economy and down where the real suffering happens, Empire of AI pierces the veil of the industry defining our era.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780593657515"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0593657519"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 497,
+        "printType": "BOOK",
+        "categories": [
+          "Technology & Engineering"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.7.6.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=r6M4EQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=r6M4EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=r6M4EQAAQBAJ&printsec=frontcover&dq=Empire+of+AI&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=r6M4EQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=r6M4EQAAQBAJ"
+      },
+      "readDate": "2026-01-01",
+      "tags": [
+        "AI",
+        "OpenAI"
+      ],
+      "notes": "zigest"
+    }
+  ],
+  "wishlist": [],
+  "tags": [
+    "Fiction",
+    "Non-fiction",
+    "Sci-Fi",
+    "Technology",
+    "Biography"
+  ]
+}

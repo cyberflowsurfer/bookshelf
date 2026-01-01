@@ -121,7 +121,7 @@ const Wishlist = () => {
                                         Move to Library
                                     </button>
                                     <button
-                                        onClick={() => { if (window.confirm('Remove from wishlist?')) removeFromWishlist(book.id) }}
+                                        onClick={() => { if (window.confirm(`Remove "${info.title}" from wishlist?`)) removeFromWishlist(book.id) }}
                                         className="text-gray-400 hover:text-red-600"
                                         title="Remove from wishlist"
                                     >
