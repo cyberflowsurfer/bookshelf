@@ -6,6 +6,7 @@ import FindBooks from './pages/FindBooks';
 import Library from './pages/Library';
 import Wishlist from './pages/Wishlist';
 import BookDetails from './pages/BookDetails';
+import Following from './pages/Following';
 import Admin from './pages/Admin';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="find" element={<FindBooks />} />
         <Route path="library" element={<Library />} />
         <Route path="wishlist" element={<Wishlist />} />
+        <Route path="following" element={<Following />} />
         <Route path="book/:id" element={<BookDetails />} />
         <Route path="admin" element={<Admin />} />
         {/* Fallback for 404 could go here */}

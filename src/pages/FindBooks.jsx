@@ -1,10 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { Search, Plus, BookOpen, Loader } from 'lucide-react';
 import { searchBooks } from '../services/googleBooks';
 import useBookStore from '../store/useBookStore';
 import AddToLibraryModal from '../components/AddToLibraryModal';
 
 const FindBooks = () => {
+    const [searchParams] = useSearchParams();
     const [query, setQuery] = useState('');
     const [filter, setFilter] = useState('');
     const [orderBy, setOrderBy] = useState('newest');
@@ -17,13 +19,28 @@ const FindBooks = () => {
 
     const { addToWishlist, addToLibrary, wishlist, library } = useBookStore();
 
-    const handleSearch = async (startIndex = 0) => {
-        if (!query.trim()) return;
+    useEffect(() => {
+        const initialQuery = searchParams.get('query');
+        const initialFilter = searchParams.get('filter');
+
+        setFilter(initialFilter || '');
+
+        if (initialQuery) {
+            setQuery(initialQuery);
+            handleSearch(0, initialQuery, initialFilter || '');
+        }
+    }, [searchParams]); // Depend on searchParams
+
+    const handleSearch = async (startIndex = 0, queryOverride = null, filterOverride = null) => {
+        const searchQuery = queryOverride !== null ? queryOverride : query;
+        const searchFilter = filterOverride !== null ? filterOverride : filter;
+
+        if (!searchQuery.trim()) return;
 
         setLoading(true);
         setError(null);
         try {
-            const data = await searchBooks(query, filter || null, startIndex, orderBy);
+            const data = await searchBooks(searchQuery, searchFilter || null, startIndex, orderBy);
             setResults(data.items || []);
             setTotalItems(data.totalItems || 0);
         } catch (err) {

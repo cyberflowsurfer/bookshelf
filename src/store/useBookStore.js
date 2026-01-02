@@ -7,6 +7,8 @@ const useBookStore = create(
             library: [],
             wishlist: [],
             tags: ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography'],
+            following: [],
+            topics: [],
 
             addToLibrary: (book) =>
                 set((state) => {
@@ -61,16 +63,40 @@ const useBookStore = create(
                     tags: state.tags.filter(t => t !== tag)
                 })),
 
+            followAuthor: (author) =>
+                set((state) => {
+                    if (state.following.includes(author)) return state;
+                    return { following: [...state.following, author] };
+                }),
+
+            unfollowAuthor: (author) =>
+                set((state) => ({
+                    following: state.following.filter(a => a !== author)
+                })),
+
+            addTopic: (topic) =>
+                set((state) => {
+                    if (state.topics.includes(topic)) return state;
+                    return { topics: [...state.topics, topic] };
+                }),
+
+            removeTopic: (topic) =>
+                set((state) => ({
+                    topics: state.topics.filter(t => t !== topic)
+                })),
+
             importData: (data) => {
                 // Basic validation could go here
                 set({
                     library: data.library || [],
                     wishlist: data.wishlist || [],
-                    tags: data.tags || ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography']
+                    tags: data.tags || ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography'],
+                    following: data.following || [],
+                    topics: data.topics || []
                 });
             },
 
-            reset: () => set({ library: [], wishlist: [], tags: ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography'] })
+            reset: () => set({ library: [], wishlist: [], tags: ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography'], following: [], topics: [] })
         }),
         {
             name: 'bookshelf-storage',

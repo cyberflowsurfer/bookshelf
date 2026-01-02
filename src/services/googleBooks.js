@@ -12,7 +12,11 @@ export const searchBooks = async (query, filter = null, startIndex = 0, orderBy 
 
     let q = query;
     if (filter) {
-        q = `${filter}:${query}`;
+        if (filter === 'inauthor') {
+            q = `${filter}:"${query}"`;
+        } else {
+            q = `${filter}:${query}`;
+        }
     }
 
     // Google Books API maxResults defaults to 10, max is 40.

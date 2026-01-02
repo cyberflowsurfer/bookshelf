@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ArrowLeft, BookOpen, Calendar, Save, Trash2, Tag, BookHeart } from 'lucide-react';
+import { ArrowLeft, BookOpen, Calendar, Save, Trash2, Tag, BookHeart, Eye, EyeOff } from 'lucide-react';
 import useBookStore from '../store/useBookStore';
 import { getBookDetails, getAuthorBooks } from '../services/googleBooks';
 import { useNotification } from '../context/NotificationContext';
@@ -9,7 +9,7 @@ import TagControl from '../components/TagControl';
 const BookDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { library, wishlist, updateBook, addToLibrary, addToWishlist, removeFromLibrary, removeFromWishlist } = useBookStore();
+    const { library, wishlist, updateBook, addToLibrary, addToWishlist, removeFromLibrary, removeFromWishlist, following, followAuthor, unfollowAuthor } = useBookStore();
 
     const [book, setBook] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -79,6 +79,19 @@ const BookDetails = () => {
 
     const info = book.volumeInfo || {};
     const largeImage = info.imageLinks?.medium || info.imageLinks?.thumbnail || info.imageLinks?.smallThumbnail;
+    const author = info.authors?.[0];
+    const isFollowing = author && following.includes(author);
+
+    const toggleFollow = () => {
+        if (!author) return;
+        if (isFollowing) {
+            unfollowAuthor(author);
+            showNotification(`Unfollowed ${author}`, 'info');
+        } else {
+            followAuthor(author);
+            showNotification(`Following ${author}`, 'success');
+        }
+    };
 
     return (
         <div className="space-y-8 animate-fade-in">
@@ -104,7 +117,21 @@ const BookDetails = () => {
                             <div>
                                 <h1 className="text-3xl font-bold text-gray-900 font-serif">{info.title}</h1>
                                 {info.subtitle && <p className="text-xl text-gray-500 mt-1">{info.subtitle}</p>}
-                                <p className="text-lg text-gray-600 italic mt-2">{info.authors?.join(', ')}</p>
+                                <div className="flex items-center mt-2">
+                                    <p className="text-lg text-gray-600 italic mr-3">{info.authors?.join(', ')}</p>
+                                    {author && (
+                                        <button
+                                            onClick={toggleFollow}
+                                            className={`inline-flex items-center p-1 rounded-full transition-colors ${isFollowing
+                                                    ? 'text-indigo-600 bg-indigo-50 hover:bg-indigo-100'
+                                                    : 'text-gray-400 hover:text-indigo-600 hover:bg-gray-50'
+                                                }`}
+                                            title={isFollowing ? "Unfollow Author" : "Follow Author"}
+                                        >
+                                            {isFollowing ? <Eye className="h-5 w-5" /> : <EyeOff className="h-5 w-5" />}
+                                        </button>
+                                    )}
+                                </div>
                             </div>
                             {inLibrary && (
                                 <span className="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 text-blue-800">

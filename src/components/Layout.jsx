@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
-import { Library, Search, BookOpen, BookHeart, Settings } from 'lucide-react';
+import { Library, Search, BookOpen, BookHeart, Settings, Users } from 'lucide-react';
 
 const Layout = () => {
     const navItems = [
@@ -8,6 +8,7 @@ const Layout = () => {
         { to: '/find', label: 'Find Books', icon: Search },
         { to: '/library', label: 'Library', icon: Library },
         { to: '/wishlist', label: 'Wishlist', icon: BookHeart },
+        { to: '/following', label: 'Following', icon: Users },
         { to: '/admin', label: 'Admin', icon: Settings },
     ];
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search, Tag, Calendar, BookOpen, Trash2, Edit } from 'lucide-react';
 import useBookStore from '../store/useBookStore';
 import TagControl from '../components/TagControl';
+import HoverDescription from '../components/HoverDescription';
 
 const Library = () => {
     const { library, removeFromLibrary, updateBook } = useBookStore();
@@ -10,6 +11,9 @@ const Library = () => {
     const [selectedTag, setSelectedTag] = useState(null);
     const [sortConfig, setSortConfig] = useState({ key: 'readDate', direction: 'desc' });
     const [expandedRows, setExpandedRows] = useState(new Set());
+
+    // Hover state for description tooltip
+    const [hoverState, setHoverState] = useState({ text: '', x: 0, y: 0, visible: false });
 
     const uniqueTags = useMemo(() => {
         const allTags = new Set(library.flatMap(book => book.tags || []));
@@ -82,6 +86,30 @@ const Library = () => {
             newExpanded.add(id);
         }
         setExpandedRows(newExpanded);
+    };
+
+    const handleMouseEnter = (e, text) => {
+        if (!text) return;
+        setHoverState({
+            text,
+            x: e.clientX,
+            y: e.clientY,
+            visible: true
+        });
+    };
+
+    const handleMouseMove = (e) => {
+        if (hoverState.visible) {
+            setHoverState(prev => ({
+                ...prev,
+                x: e.clientX,
+                y: e.clientY
+            }));
+        }
+    };
+
+    const handleMouseLeave = () => {
+        setHoverState(prev => ({ ...prev, visible: false }));
     };
 
     return (
@@ -196,7 +224,12 @@ const Library = () => {
                                         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 align-top">
                                             {book.readDate || '-'}
                                         </td>
-                                        <td className="px-6 py-4 text-sm text-gray-500 relative align-top">
+                                        <td
+                                            className="px-6 py-4 text-sm text-gray-500 relative align-top cursor-help"
+                                            onMouseEnter={(e) => handleMouseEnter(e, info.description)}
+                                            onMouseMove={handleMouseMove}
+                                            onMouseLeave={handleMouseLeave}
+                                        >
                                             <div className={`${isExpanded ? '' : 'line-clamp-2'} max-w-sm`}>
                                                 {info.description || 'No description.'}
                                             </div>
@@ -237,6 +270,12 @@ const Library = () => {
                     </table>
                 </div>
             </div>
+
+            <HoverDescription
+                text={hoverState.text}
+                position={{ x: hoverState.x, y: hoverState.y }}
+                visible={hoverState.visible}
+            />
         </div>
     );
 };
