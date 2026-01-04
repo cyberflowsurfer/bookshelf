@@ -1,14 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Users, EyeOff, Search, Book, ExternalLink, Hash, X, Plus } from 'lucide-react';
+import { Users, EyeOff, Search, Book, ExternalLink, Hash, X, Plus, Pencil, Globe, Mic, Linkedin, FileText, Twitter } from 'lucide-react';
 import useBookStore from '../store/useBookStore';
 import { useNotification } from '../context/NotificationContext';
+import AuthorProfileModal from '../components/AuthorProfileModal';
 
 const Following = () => {
-    const { following, unfollowAuthor, followAuthor, topics, addTopic, removeTopic } = useBookStore();
+    const { following, unfollowAuthor, followAuthor, topics, addTopic, removeTopic, authorProfiles, updateAuthorProfile } = useBookStore();
     const { showNotification } = useNotification();
     const [newTopic, setNewTopic] = useState('');
     const [newAuthor, setNewAuthor] = useState('');
+    const [editingAuthor, setEditingAuthor] = useState(null);
 
     const handleUnfollow = (author) => {
         if (window.confirm(`Unfollow ${author}?`)) {
@@ -29,6 +31,11 @@ const Following = () => {
             setNewAuthor('');
             showNotification(`Following: ${trimmed}`, 'success');
         }
+    };
+
+    const handleSaveProfile = (author, data) => {
+        updateAuthorProfile(author, data);
+        showNotification('Profile updated', 'success');
     };
 
     const handleAddTopic = (e) => {
@@ -96,45 +103,65 @@ const Following = () => {
                                     <tr>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Author</th>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-20">Wikipedia</th>
+                                        <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-48">Socials</th>
                                         <th scope="col" className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider w-20">Books</th>
                                         <th scope="col" className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider w-20">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody className="bg-white divide-y divide-gray-200">
-                                    {following.map((author) => (
-                                        <tr key={author} className="hover:bg-gray-50">
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{author}</td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                <a
-                                                    href={`https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(author)}`}
-                                                    target="_blank"
-                                                    rel="noopener noreferrer"
-                                                    className="text-gray-400 hover:text-blue-600 transition-colors"
-                                                    title="View on Wikipedia"
-                                                >
-                                                    <ExternalLink className="h-5 w-5" />
-                                                </a>
-                                            </td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                <Link
-                                                    to={`/find?query=${encodeURIComponent(author)}&filter=inauthor`}
-                                                    className="text-gray-400 hover:text-indigo-600 transition-colors"
-                                                    title={`Find books by ${author}`}
-                                                >
-                                                    <Book className="h-5 w-5" />
-                                                </Link>
-                                            </td>
-                                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                                <button
-                                                    onClick={() => handleUnfollow(author)}
-                                                    className="text-gray-400 hover:text-red-600 transition-colors"
-                                                    title="Unfollow"
-                                                >
-                                                    <EyeOff className="h-5 w-5" />
-                                                </button>
-                                            </td>
-                                        </tr>
-                                    ))}
+                                    {following.map((author) => {
+                                        const profile = authorProfiles[author] || {};
+                                        return (
+                                            <tr key={author} className="hover:bg-gray-50">
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{author}</td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    <a
+                                                        href={`https://en.wikipedia.org/wiki/Special:Search?search=${encodeURIComponent(author)}`}
+                                                        target="_blank"
+                                                        rel="noopener noreferrer"
+                                                        className="text-gray-400 hover:text-blue-600 transition-colors"
+                                                        title="View on Wikipedia"
+                                                    >
+                                                        <ExternalLink className="h-5 w-5" />
+                                                    </a>
+                                                </td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500 flex gap-2">
+                                                    {profile.blog && <a href={profile.blog} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500" title="Blog"><Globe className="h-4 w-4" /></a>}
+                                                    {profile.podcast && <a href={profile.podcast} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-purple-500" title="Podcast"><Mic className="h-4 w-4" /></a>}
+                                                    {profile.linkedin && <a href={profile.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-700" title="LinkedIn"><Linkedin className="h-4 w-4" /></a>}
+                                                    {profile.substack && <a href={profile.substack} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-orange-500" title="Substack"><FileText className="h-4 w-4" /></a>}
+                                                    {profile.x && <a href={profile.x} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-black" title="X (Twitter)"><Twitter className="h-4 w-4" /></a>}
+                                                </td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                                    <Link
+                                                        to={`/find?query=${encodeURIComponent(author)}&filter=inauthor`}
+                                                        className="text-gray-400 hover:text-indigo-600 transition-colors"
+                                                        title={`Find books by ${author}`}
+                                                    >
+                                                        <Book className="h-5 w-5" />
+                                                    </Link>
+                                                </td>
+                                                <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                                    <div className="flex justify-end gap-2">
+                                                        <button
+                                                            onClick={() => setEditingAuthor(author)}
+                                                            className="text-gray-400 hover:text-indigo-600 transition-colors"
+                                                            title="Edit Profile"
+                                                        >
+                                                            <Pencil className="h-5 w-5" />
+                                                        </button>
+                                                        <button
+                                                            onClick={() => handleUnfollow(author)}
+                                                            className="text-gray-400 hover:text-red-600 transition-colors"
+                                                            title="Unfollow"
+                                                        >
+                                                            <EyeOff className="h-5 w-5" />
+                                                        </button>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        );
+                                    })}
                                 </tbody>
                             </table>
                         </div>
@@ -202,6 +229,16 @@ const Following = () => {
                     </div>
                 </div>
             </div>
+
+            {editingAuthor && (
+                <AuthorProfileModal
+                    isOpen={!!editingAuthor}
+                    onClose={() => setEditingAuthor(null)}
+                    authorName={editingAuthor}
+                    initialData={authorProfiles[editingAuthor]}
+                    onSave={handleSaveProfile}
+                />
+            )}
         </div>
     );
 };

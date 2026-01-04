@@ -9,6 +9,7 @@ const useBookStore = create(
             tags: ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography'],
             following: [],
             topics: [],
+            authorProfiles: {},
 
             addToLibrary: (book) =>
                 set((state) => {
@@ -85,6 +86,14 @@ const useBookStore = create(
                     topics: state.topics.filter(t => t !== topic)
                 })),
 
+            updateAuthorProfile: (author, profile) =>
+                set((state) => ({
+                    authorProfiles: {
+                        ...state.authorProfiles,
+                        [author]: { ...state.authorProfiles[author], ...profile }
+                    }
+                })),
+
             importData: (data) => {
                 // Basic validation could go here
                 set({
@@ -92,11 +101,12 @@ const useBookStore = create(
                     wishlist: data.wishlist || [],
                     tags: data.tags || ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography'],
                     following: data.following || [],
-                    topics: data.topics || []
+                    topics: data.topics || [],
+                    authorProfiles: data.authorProfiles || {}
                 });
             },
 
-            reset: () => set({ library: [], wishlist: [], tags: ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography'], following: [], topics: [] })
+            reset: () => set({ library: [], wishlist: [], tags: ['Fiction', 'Non-fiction', 'Sci-Fi', 'Technology', 'Biography'], following: [], topics: [], authorProfiles: {} })
         }),
         {
             name: 'bookshelf-storage',

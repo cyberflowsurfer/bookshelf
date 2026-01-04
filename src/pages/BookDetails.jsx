@@ -5,11 +5,24 @@ import useBookStore from '../store/useBookStore';
 import { getBookDetails, getAuthorBooks } from '../services/googleBooks';
 import { useNotification } from '../context/NotificationContext';
 import TagControl from '../components/TagControl';
+import BookMindMap from '../components/BookMindMap';
 
 const BookDetails = () => {
     const { id } = useParams();
     const navigate = useNavigate();
-    const { library, wishlist, updateBook, addToLibrary, addToWishlist, removeFromLibrary, removeFromWishlist, following, followAuthor, unfollowAuthor } = useBookStore();
+
+    // Defensive destructuring
+    const store = useBookStore();
+    const library = store.library || [];
+    const wishlist = store.wishlist || [];
+    const updateBook = store.updateBook;
+    const addToLibrary = store.addToLibrary;
+    const addToWishlist = store.addToWishlist;
+    const removeFromLibrary = store.removeFromLibrary;
+    const removeFromWishlist = store.removeFromWishlist;
+    const following = store.following || [];
+    const followAuthor = store.followAuthor;
+    const unfollowAuthor = store.unfollowAuthor;
 
     const [book, setBook] = useState(null);
     const [loading, setLoading] = useState(true);
@@ -17,6 +30,7 @@ const BookDetails = () => {
     const [notes, setNotes] = useState('');
     const [readDate, setReadDate] = useState('');
     const [isDirty, setIsDirty] = useState(false);
+    const [activeTab, setActiveTab] = useState('overview');
 
     const inLibrary = library.find(b => b.id === id);
     const inWishlist = wishlist.find(b => b.id === id);
@@ -74,6 +88,22 @@ const BookDetails = () => {
         }
     };
 
+    const handleSaveMindMap = (mindmapData) => {
+        const newBookData = { ...book, mindmap: mindmapData };
+        if (inLibrary) {
+            updateBook(id, { mindmap: mindmapData });
+            setBook(newBookData);
+            showNotification('Mind map saved!', 'success');
+        } else {
+            if (window.confirm("Add to library to save mind map?")) {
+                addToLibrary({ ...newBookData, readDate: new Date().toISOString().split('T')[0] });
+                if (inWishlist) removeFromWishlist(id);
+                setBook(newBookData);
+                showNotification('Book added and mind map saved!', 'success');
+            }
+        }
+    };
+
     if (loading) return <div className="p-8 text-center">Loading...</div>;
     if (!book) return <div className="p-8 text-center">Book not found.</div>;
 
@@ -106,11 +136,18 @@ const BookDetails = () => {
             <div className="bg-white shadow rounded-lg overflow-hidden">
                 <div className="md:flex">
                     <div className="md:flex-shrink-0 bg-gray-50 p-8 flex justify-center items-start">
-                        <img
-                            className="h-64 w-auto object-cover shadow-lg rounded"
-                            src={largeImage}
-                            alt={info.title}
-                        />
+                        {largeImage ? (
+                            <img
+                                className="h-64 w-auto object-cover shadow-lg rounded"
+                                src={largeImage}
+                                alt={info.title}
+                            />
+                        ) : (
+                            <div className="h-64 w-48 bg-gray-200 rounded shadow-lg flex flex-col items-center justify-center p-4 text-center">
+                                <BookOpen className="h-16 w-16 text-gray-400 mb-2" />
+                                <span className="text-sm text-gray-500 font-medium">No Image</span>
+                            </div>
+                        )}
                     </div>
                     <div className="p-8 md:flex-grow">
                         <div className="flex justify-between items-start">
@@ -123,8 +160,8 @@ const BookDetails = () => {
                                         <button
                                             onClick={toggleFollow}
                                             className={`inline-flex items-center p-1 rounded-full transition-colors ${isFollowing
-                                                    ? 'text-indigo-600 bg-indigo-50 hover:bg-indigo-100'
-                                                    : 'text-gray-400 hover:text-indigo-600 hover:bg-gray-50'
+                                                ? 'text-indigo-600 bg-indigo-50 hover:bg-indigo-100'
+                                                : 'text-gray-400 hover:text-indigo-600 hover:bg-gray-50'
                                                 }`}
                                             title={isFollowing ? "Unfollow Author" : "Follow Author"}
                                         >
@@ -214,38 +251,75 @@ const BookDetails = () => {
                 </div>
             </div>
 
-            {/* Description & Notes */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-white shadow rounded-lg p-6">
-                    <h2 className="text-xl font-bold text-gray-900 mb-4">Description</h2>
-                    <div
-                        className="prose prose-blue text-gray-600"
-                        dangerouslySetInnerHTML={{ __html: info.description || 'No description available.' }}
-                    />
+            {/* Tabs & Content */}
+            <div className="bg-white shadow rounded-lg overflow-hidden min-h-[600px] flex flex-col">
+                <div className="border-b border-gray-200">
+                    <nav className="-mb-px flex" aria-label="Tabs">
+                        <button
+                            onClick={() => setActiveTab('overview')}
+                            className={`${activeTab === 'overview'
+                                ? 'border-indigo-500 text-indigo-600'
+                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                } w-1/2 py-4 px-1 text-center border-b-2 font-medium text-sm transition-colors`}
+                        >
+                            Overview & Notes
+                        </button>
+                        <button
+                            onClick={() => setActiveTab('mindmap')}
+                            className={`${activeTab === 'mindmap'
+                                ? 'border-indigo-500 text-indigo-600'
+                                : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                                } w-1/2 py-4 px-1 text-center border-b-2 font-medium text-sm transition-colors`}
+                        >
+                            Mind Map
+                        </button>
+                    </nav>
                 </div>
 
-                <div className="bg-white shadow rounded-lg p-6 flex flex-col">
-                    <div className="flex justify-between items-center mb-4">
-                        <h2 className="text-xl font-bold text-gray-900">Notes</h2>
-                        {isDirty && (
-                            <button
-                                onClick={handleSave}
-                                className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700"
-                            >
-                                <Save className="h-4 w-4 mr-1" />
-                                Save Changes
-                            </button>
-                        )}
-                    </div>
-                    <textarea
-                        className="flex-grow w-full border border-gray-300 rounded-md shadow-sm p-4 focus:ring-indigo-500 focus:border-indigo-500 font-mono text-sm"
-                        placeholder="Write your notes here..." // Supports basic formatting like markdown conceptually
-                        value={notes}
-                        onChange={(e) => { setNotes(e.target.value); setIsDirty(true); }}
-                    />
-                    <p className="mt-2 text-xs text-gray-400">
-                        Supports basic text. Changes are saved when you click Save.
-                    </p>
+                <div className="p-6 flex-grow flex flex-col">
+                    {activeTab === 'overview' ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 h-full">
+                            <div>
+                                <h2 className="text-xl font-bold text-gray-900 mb-4">Description</h2>
+                                <div
+                                    className="prose prose-blue text-gray-600"
+                                    dangerouslySetInnerHTML={{ __html: info.description || 'No description available.' }}
+                                />
+                            </div>
+
+                            <div className="flex flex-col h-full">
+                                <div className="flex justify-between items-center mb-4">
+                                    <h2 className="text-xl font-bold text-gray-900">Notes</h2>
+                                    {isDirty && (
+                                        <button
+                                            onClick={handleSave}
+                                            className="inline-flex items-center px-3 py-1.5 border border-transparent text-xs font-medium rounded text-white bg-indigo-600 hover:bg-indigo-700"
+                                        >
+                                            <Save className="h-4 w-4 mr-1" />
+                                            Save Changes
+                                        </button>
+                                    )}
+                                </div>
+                                <textarea
+                                    className="flex-grow w-full border border-gray-300 rounded-md shadow-sm p-4 focus:ring-indigo-500 focus:border-indigo-500 font-mono text-sm min-h-[300px]"
+                                    placeholder="Write your notes here..."
+                                    value={notes}
+                                    onChange={(e) => { setNotes(e.target.value); setIsDirty(true); }}
+                                />
+                                <p className="mt-2 text-xs text-gray-400">
+                                    Supports basic text. Changes are saved when you click Save.
+                                </p>
+                            </div>
+                        </div>
+                    ) : (
+                        <div className="h-[600px] w-full">
+                            <BookMindMap
+                                initialNodes={book.mindmap?.nodes || []}
+                                initialEdges={book.mindmap?.edges || []}
+                                onSave={handleSaveMindMap}
+                            />
+                        </div>
+                    )}
                 </div>
             </div>
 

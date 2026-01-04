@@ -1,6 +1,483 @@
 {
   "library": [
     {
+      "id": "PVcKEQAAQBAJ",
+      "volumeInfo": {
+        "title": "Revenge of the Tipping Point",
+        "subtitle": "Overstories, Superspreaders, and the Rise of Social Engineering",
+        "authors": [
+          "Malcolm Gladwell"
+        ],
+        "publisher": "Little, Brown",
+        "publishedDate": "2024-10-01",
+        "description": "Twenty-five years after the publication of his groundbreaking first book, Malcolm Gladwell returns with “curiosity and humor” in this New York Times bestseller that reframes the lessons of The Tipping Point in a startling and revealing light (Shannon Carlin). ​ Why is Miami…Miami? What does the heartbreaking fate of the cheetah tell us about the way we raise our children? Why do Ivy League schools care so much about sports? What is the Magic Third, and what does it mean for racial harmony? In this provocative new work, Malcolm Gladwell returns for the first time in twenty-five years to the subject of social epidemics and tipping points, this time with the aim of explaining the dark side of contagious phenomena. Through a series of riveting stories, Gladwell traces the rise of a new and troubling form of social engineering. He takes us to the streets of Los Angeles to meet the world’s most successful bank robbers, rediscovers a forgotten television show from the 1970s that changed the world, visits the site of a historic experiment on a tiny cul-de-sac in northern California, and offers an alternate history of two of the biggest epidemics of our day: COVID and the opioid crisis. Revenge of the Tipping Point is Gladwell’s most personal book yet. With his characteristic mix of storytelling and social science, he offers a guide to making sense of the contagions of modern world. It’s time we took tipping points seriously. Most Anticipated in: AARP| Associated Press| Time Magazine | Oprah Daily | Chicago Tribune | Literary Hub | Publishers Weekly | Publishers Lunch",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780316581479"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "031658147X"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 190,
+        "printType": "BOOK",
+        "categories": [
+          "Psychology"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.6.6.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=PVcKEQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=PVcKEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=PVcKEQAAQBAJ&printsec=frontcover&dq=Revenge+of+the+tipping+point&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=PVcKEQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=PVcKEQAAQBAJ"
+      },
+      "readDate": "2025-12-30",
+      "tags": [
+        "Psychology"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "GTs-EQAAQBAJ",
+      "volumeInfo": {
+        "title": "The Coming Wave",
+        "subtitle": "AI, Power, and Our Future",
+        "authors": [
+          "Mustafa Suleyman"
+        ],
+        "publisher": "Random House",
+        "publishedDate": "2025-04-01",
+        "description": "NEW YORK TIMES BESTSELLER • An urgent warning of the unprecedented risks that AI and other fast-developing technologies pose to global order, and how we might contain them while we have the chance—from a co-founder of the pioneering artificial intelligence company DeepMind and current CEO of Microsoft AI “A fascinating, well-written, and important book.”—Yuval Noah Harari “Essential reading.”—Daniel Kahneman “My favorite book on AI.”—Bill Gates, GatesNotes A Best Book of the Year: CNN, Economist, Bloomberg, Politico Playbook, Financial Times, The Guardian, CEO Magazine, Semafor • Winner of the Inc. Non-Obvious Book Award • Finalist for the Porchlight Business Book Award and the Financial Times and Schroders Business Book of the Year Award We are approaching a critical threshold in the history of our species. Everything is about to change. Soon you will live surrounded by AIs. They will organize your life, operate your business, and run core government services. You will live in a world of DNA printers and quantum computers, engineered pathogens and autonomous weapons, robot assistants and abundant energy. None of us are prepared. As co-founder of the pioneering AI company DeepMind, part of Google, Mustafa Suleyman has been at the center of this revolution. The coming decade, he argues, will be defined by this wave of powerful, fast-proliferating new technologies. In The Coming Wave, Suleyman shows how these forces will create immense prosperity but also threaten the nation-state, the foundation of global order. As our fragile governments sleepwalk into disaster, we face an existential dilemma: unprecedented harms on one side, the threat of overbearing surveillance on the other. How do we ensure the flourishing of humankind? How do we maintain control? How do we navigate the narrow path to a successful future? This groundbreaking book from the ultimate AI insider establishes “the containment problem”—the task of maintaining control over powerful technologies—as the essential challenge of our age.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780593593974"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0593593979"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 353,
+        "printType": "BOOK",
+        "categories": [
+          "Technology & Engineering"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.1.1.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=GTs-EQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=GTs-EQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=GTs-EQAAQBAJ&printsec=frontcover&dq=The+coming+wave&hl=&cd=3&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=GTs-EQAAQBAJ&dq=The+coming+wave&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Coming_Wave.html?hl=&id=GTs-EQAAQBAJ"
+      },
+      "readDate": "2025-01-03",
+      "tags": [
+        "Technology & Engineering",
+        "AI"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "86boEAAAQBAJ",
+      "volumeInfo": {
+        "title": "The Biggest Ideas in the Universe 2",
+        "subtitle": "Quanta and Fields",
+        "authors": [
+          "Sean Carroll"
+        ],
+        "publisher": "Simon and Schuster",
+        "publishedDate": "2024-05-30",
+        "description": "THE NEW YORK TIMES BESTSELLER ‘Neat, and extremely simple: only a deep thinker such as Sean Carroll could introduce the complexity of Einstein’s general relativity in such a luminous and straightforward manner.’ Carlo Rovelli, author of Seven Brief Lessons on Physics Immense, strange and infinite, the world of modern physics often feels impenetrable to the undiscerning eye – a jumble of muons, gluons and quarks, impossible to explain without several degrees and a research position at CERN. But it doesn’t have to be this way! Allow world-renowned theoretical physicist and bestselling author Sean Carroll to guide you through the biggest ideas in the universe. Elegant and simple, Carroll unravels a web of theory to get to the heart of the truths they represent about the world around us. — In Quanta and Fields, the second in this landmark trilogy, Carroll delves into the baffling and beautiful world of quantum mechanics. From Schrödinger to Feynman, Carroll travels through the quantum revolution with the greatest minds of the twentieth century. Exploring how several decades of research overturned centuries of convention, Carroll provides a dazzling tour of the most exciting ideas in modern science.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780861548156"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0861548159"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 262,
+        "printType": "BOOK",
+        "categories": [
+          "Science"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.4.4.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=86boEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=86boEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=86boEAAAQBAJ&printsec=frontcover&dq=The+biggest+ideas+in+the+universe&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=86boEAAAQBAJ&dq=The+biggest+ideas+in+the+universe&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/The_Biggest_Ideas_in_the_Universe_2.html?hl=&id=86boEAAAQBAJ"
+      },
+      "readDate": "2025-02-15",
+      "tags": [
+        "Science",
+        "Physics"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "9FpMEQAAQBAJ",
+      "volumeInfo": {
+        "title": "Age of Invisible Machines",
+        "subtitle": "A Guide to Orchestrating AI Agents and Making Organizations More Self-Driving, Revised and Updated",
+        "authors": [
+          "Robb Wilson",
+          "Josh Tyson"
+        ],
+        "publisher": "John Wiley & Sons",
+        "publishedDate": "2025-04-22",
+        "description": "Cut through the noise and unlock the transformational power of conversational AI In the newly revised second edition of Age of Invisible Machines, renowned tech leader Robb Wilson delivers a startlingly insightful and eye-opening blueprint for using conversational AI to make your company self-driving—with a digital ecosystem of interconnected automations powering all aspects of your business. Conversational AI is transforming every job at every company (starting yesterday) and this book is perfect for anyone affected by these technologies. You'll learn how to develop a hyperautomation strategy by identifying outdated processes and systems holding your company back. This latest edition offers brand new chapters dedicated to fast-growing automation tools, including Large Language Models, generative AI, and much more. You'll discover ways to implement new technologies that are force-multipliers for rapid growth. A must-read for every business leader, Wilson's book debunks common myths about conversational AI while simplifying the inevitable complexity of restructuring your business to unlock the substantial opportunities this new era offers. You'll also find: Incisive discussions of the ethical dilemmas that lie before us as mass adoption of conversational AI takes effect Fascinating examinations of what a self-driving business looks like and how you can use conversational AI to generate an enduring competitive advantage Strategies for creating a hyperautomated ecosystem that any company can begin using immediately QR links to interactive and ongoing discussions of the subjects covered in each chapter A practical and essential exploration of the future of conversational AI and hyperautomation, Age of Invisible Machines belongs in the hands of entrepreneurs, founders, business leaders, tech enthusiasts, designers and anyone else with a stake in the future of business.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781394321551"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1394321554"
+          }
+        ],
+        "readingModes": {
+          "text": false,
+          "image": true
+        },
+        "pageCount": 343,
+        "printType": "BOOK",
+        "categories": [
+          "Business & Economics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.2.0.0.preview.1",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=9FpMEQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=9FpMEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=9FpMEQAAQBAJ&printsec=frontcover&dq=The+Age+of+invisible+machines&hl=&cd=2&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=9FpMEQAAQBAJ&dq=The+Age+of+invisible+machines&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Age_of_Invisible_Machines.html?hl=&id=9FpMEQAAQBAJ"
+      },
+      "readDate": "2025-07-08",
+      "tags": [
+        "Business & Economics",
+        "AI"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "YjoeEQAAQBAJ",
+      "volumeInfo": {
+        "title": "The Nvidia Way",
+        "subtitle": "Jensen Huang and the Making of a Tech Giant",
+        "authors": [
+          "Tae Kim"
+        ],
+        "publisher": "W. W. Norton & Company",
+        "publishedDate": "2024-12-10",
+        "description": "\"[L]oaded with fascinating details about Huang’s unusual leadership style and maniacal work habits.\" —Ben Cohen, Wall Street Journal \"The definitive look at the most remarkable business story of this era.\" —Morgan Housel, New York Times best-selling author of The Psychology of Money and Same As Ever A deeply reported business history of the chip-designer Nvidia—from its founding in 1993 to its recent emergence as one of the most valuable corporations in the world—explaining how the company’s culture, overseen by cofounder and CEO Jensen Huang, has powered its incredible success. Nvidia is the darling of the age of artificial intelligence: its chips are powering the generative-AI revolution, and demand is insatiable. For all the current interest and attention, however, Nvidia is not of our time. Founded more than three decades ago in a Denny’s in East San Jose, for years it was known primarily in the then-niche world of computer gaming. In fact, the company’s leather-jacketed leader, Jensen Huang, is the longest-serving CEO in an industry marked by near constant turmoil and failure. In The Nvidia Way, acclaimed tech writer Tae Kim draws on more than one hundred interviews—including Jensen (as he is known) and his cofounders, the two original venture capital investors, early former employees, and current senior executives—to show how Nvidia played the longest of long games, repeatedly creating new markets and outmaneuvering competitors, including the original semiconductor giant, Intel, which now finds itself well behind the upstart. Kim offers revelations at every step, among them: An authoritative, myth-busting account of Nvidia’s founding in 1993. How Nvidia managed to overcome early missteps that would have killed most start-ups. The benefits of Nvidia’s flat organizational structure, which allows even low-level employees to contribute to the direction of the company. How Jensen’s obsession with solving the Innovator’s Dilemma—the problem of an entrenched market leader falling to smaller, nimbler companies—drove him to reinvent his approach to corporate strategy. How Nvidia saw the coming AI wave sooner than anyone else, and how it bet its future on a technology that had not yet arrived. A rare view into Nvidia’s distinct culture and Jensen’s management principles, The Nvidia Way is a book for our moment as well as an instant classic of business history, with enduring lessons for entrepreneurs and managers alike.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781324086727"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1324086726"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 314,
+        "printType": "BOOK",
+        "categories": [
+          "Business & Economics"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.6.4.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=YjoeEQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=YjoeEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=YjoeEQAAQBAJ&printsec=frontcover&dq=The+Nvidia+way&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=YjoeEQAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=YjoeEQAAQBAJ"
+      },
+      "readDate": "2025-10-03",
+      "tags": [
+        "Business & Economics",
+        "AI"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "NUICEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Hello world",
+        "subtitle": "Kuinka selviytyä algoritmien aikakaudella",
+        "authors": [
+          "Hannah Fry"
+        ],
+        "publisher": "Bonnier Books Finland",
+        "publishedDate": "2019-10-03",
+        "description": "Tekoäly ja ihmisenä olemisen taito Lähde kiehtovalle kiertoajelulle tekoälyn ja algoritmien maailmaan! Hannah Fryn Hello world saa lukijan pohtimaan, miten säilyttää ihmisyytensä koneiden keskellä. Kuvittele, että sinua syytetään rikoksesta. Kumman haluaisit käsittelevän syytettä – ihmisen vai algoritmin? Haluaisitko, että käsittelijä on looginen ja virheetön vai empaattinen ja armollinen? Algoritmeja on kaikkialla: terveydenhuollossa, liikenteessä, rahoitusalalla, rikostentorjunnassa, ajanvietteessä. Toisinaan niitä on jopa päättämässä, kenet tuomitaan vankeuteen ja ketä ei. Miten kaukana on aika, jolloin koneet tekevät kaikki meitä ihmisiä koskevat päätökset? Minkälaisen tulevaisuuden me oikeasti haluamme? Huippusuosittu brittitutkija ja tieteen popularisoija Hannah Fry vie meidät kirjassaan Hello world kiehtovalle kiertoajelulle algoritmien maailmaan. Fry havainnollistaa selkeästi mitä algoritmit ovat, missä niitä jo käytetään ja millaisia rajoituksia niillä on. Hän tutkii, ovatko algoritmit todellakin parannuskeino yhä kiihtyvään informaatiotulvaan.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9789522797742"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "952279774X"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 190,
+        "printType": "BOOK",
+        "categories": [
+          "Computers"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "1.3.3.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=NUICEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=NUICEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "fi",
+        "previewLink": "http://books.google.com/books?id=NUICEAAAQBAJ&printsec=frontcover&dq=Hello+World+hannah&hl=&cd=15&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=NUICEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=NUICEAAAQBAJ"
+      },
+      "readDate": "2025-11-15",
+      "tags": [
+        "Computers"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "pw3HEAAAQBAJ",
+      "volumeInfo": {
+        "title": "Literary Theory for Robots",
+        "subtitle": "How Computers Learned to Write",
+        "authors": [
+          "Dennis Yi Tenen"
+        ],
+        "publisher": "W. W. Norton & Company",
+        "publishedDate": "2024-02-06",
+        "description": "“Surprising, funny and resolutely unintimidating.” —Jennifer Szalai, New York Times Book Review In the industrial age, automation came for the shoemaker and the seamstress. Today, it has come for the writer, physician, programmer, and attorney. Literary Theory for Robots reveals the hidden history of modern machine intelligence, taking readers on a spellbinding journey from medieval Arabic philosophy to visions of a universal language, past Hollywood fiction factories and missile defense systems trained on Russian folktales. In this provocative reflection on the shared pasts of literature and computer science, former Microsoft engineer and professor of comparative literature Dennis Yi Tenen provides crucial context for recent developments in AI, which holds important lessons for the future of humans living with smart technology. Intelligence expressed through technology should not be mistaken for a magical genie, capable of self-directed thought or action. Rather, in highly original and effervescent prose with a generous dose of wit, Yi Tenen asks us to read past the artifice—to better perceive the mechanics of collaborative work. Something as simple as a spell-checker or a grammar-correction tool, embedded in every word-processor, represents the culmination of a shared human effort, spanning centuries. Smart tools, like dictionaries and grammar books, have always accompanied the act of writing, thinking, and communicating. That these paper machines are now automated does not bring them to life. Nor can we cede agency over the creative process. With its masterful blend of history, technology, and philosophy, Yi Tenen’s work ultimately urges us to view AI as a matter of labor history, celebrating the long-standing cooperation between authors and engineers.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9780393882193"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "0393882195"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 150,
+        "printType": "BOOK",
+        "categories": [
+          "Social Science"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.4.4.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=pw3HEAAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=pw3HEAAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=pw3HEAAAQBAJ&printsec=frontcover&dq=Literary+theory+for+robots&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=pw3HEAAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=pw3HEAAAQBAJ"
+      },
+      "readDate": "2025-08-03",
+      "tags": [
+        "Social Science"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "j-4yDwAAQBAJ",
+      "volumeInfo": {
+        "title": "Factfulness",
+        "subtitle": "Ten Reasons We're Wrong About the World--and Why Things Are Better Than You Think",
+        "authors": [
+          "Hans Rosling",
+          "Anna Rosling Rönnlund",
+          "Ola Rosling"
+        ],
+        "publisher": "Flatiron Books",
+        "publishedDate": "2018-04-03",
+        "description": "INSTANT NEW YORK TIMES BESTSELLER “One of the most important books I’ve ever read—an indispensable guide to thinking clearly about the world.” – Bill Gates “Hans Rosling tells the story of ‘the secret silent miracle of human progress’ as only he can. But Factfulness does much more than that. It also explains why progress is so often secret and silent and teaches readers how to see it clearly.” —Melinda Gates \"Factfulness by Hans Rosling, an outstanding international public health expert, is a hopeful book about the potential for human progress when we work off facts rather than our inherent biases.\" - Former U.S. President Barack Obama Factfulness: The stress-reducing habit of only carrying opinions for which you have strong supporting facts. When asked simple questions about global trends—what percentage of the world’s population live in poverty; why the world’s population is increasing; how many girls finish school—we systematically get the answers wrong. So wrong that a chimpanzee choosing answers at random will consistently outguess teachers, journalists, Nobel laureates, and investment bankers. In Factfulness, Professor of International Health and global TED phenomenon Hans Rosling, together with his two long-time collaborators, Anna and Ola, offers a radical new explanation of why this happens. They reveal the ten instincts that distort our perspective—from our tendency to divide the world into two camps (usually some version of us and them) to the way we consume media (where fear rules) to how we perceive progress (believing that most things are getting worse). Our problem is that we don’t know what we don’t know, and even our guesses are informed by unconscious and predictable biases. It turns out that the world, for all its imperfections, is in a much better state than we might think. That doesn’t mean there aren’t real concerns. But when we worry about everything all the time instead of embracing a worldview based on facts, we can lose our ability to focus on the things that threaten us most. Inspiring and revelatory, filled with lively anecdotes and moving stories, Factfulness is an urgent and essential book that will change the way you see the world and empower you to respond to the crises and opportunities of the future. --- “This book is my last battle in my life-long mission to fight devastating ignorance...Previously I armed myself with huge data sets, eye-opening software, an energetic learning style and a Swedish bayonet for sword-swallowing. It wasn’t enough. But I hope this book will be.” Hans Rosling, February 2017.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781250123817"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "125012381X"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": false
+        },
+        "pageCount": 353,
+        "printType": "BOOK",
+        "categories": [
+          "Science"
+        ],
+        "averageRating": 4.5,
+        "ratingsCount": 6,
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": true,
+        "contentVersion": "1.17.15.0.preview.2",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=j-4yDwAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=j-4yDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=j-4yDwAAQBAJ&printsec=frontcover&dq=Factfulness&hl=&cd=1&source=gbs_api",
+        "infoLink": "https://play.google.com/store/books/details?id=j-4yDwAAQBAJ&source=gbs_api",
+        "canonicalVolumeLink": "https://play.google.com/store/books/details?id=j-4yDwAAQBAJ"
+      },
+      "readDate": "2025-10-15",
+      "tags": [
+        "Science"
+      ],
+      "notes": ""
+    },
+    {
+      "id": "QgQTEQAAQBAJ",
+      "volumeInfo": {
+        "title": "Notes on Complexity",
+        "subtitle": "A Scientific Theory of Connection, Consciousness, and Being",
+        "authors": [
+          "Neil Theise"
+        ],
+        "publisher": "Spiegel & Grau LLC",
+        "publishedDate": "2023-05-09",
+        "description": "2024 Nautilus Book Award Winner * The Marginalian Favorite Books of 2023 An electrifying introduction to complexity theory, the science of how complex systems behave, that explains the interconnectedness of all things and that Deepak Chopra says, “will change the way you understand yourself and the universe.” Nothing in the universe is more complex than life. Throughout the skies, in oceans, and across lands, life is endlessly on the move. In its myriad forms—from cells to human beings, social structures, and ecosystems—life is open-ended, evolving, unpredictable, yet adaptive and self-sustaining. Complexity theory addresses the mysteries that animate science, philosophy, and metaphysics: how this teeming array of existence, from the infinitesimal to the infinite, is in fact a seamless living whole and what our place, as conscious beings, is within it. The implications of complexity theory are profound, providing insight into everything from the permeable boundaries of our bodies to the nature of consciousness. Notes on Complexity is an invitation to trade our limited, individualistic view for the expansive perspective of a universe that is dynamic, cohesive, and alive—a whole greater than the sum of its parts. Physician, scientist, and philosopher Neil Theise takes us to the exhilarating frontiers of human knowledge and in the process restores wonder and meaning to our experience of the everyday.",
+        "industryIdentifiers": [
+          {
+            "type": "ISBN_13",
+            "identifier": "9781954118263"
+          },
+          {
+            "type": "ISBN_10",
+            "identifier": "1954118260"
+          }
+        ],
+        "readingModes": {
+          "text": true,
+          "image": true
+        },
+        "pageCount": 186,
+        "printType": "BOOK",
+        "categories": [
+          "Science"
+        ],
+        "maturityRating": "NOT_MATURE",
+        "allowAnonLogging": false,
+        "contentVersion": "0.10.11.0.preview.3",
+        "panelizationSummary": {
+          "containsEpubBubbles": false,
+          "containsImageBubbles": false
+        },
+        "imageLinks": {
+          "smallThumbnail": "http://books.google.com/books/content?id=QgQTEQAAQBAJ&printsec=frontcover&img=1&zoom=5&edge=curl&source=gbs_api",
+          "thumbnail": "http://books.google.com/books/content?id=QgQTEQAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
+        },
+        "language": "en",
+        "previewLink": "http://books.google.com/books?id=QgQTEQAAQBAJ&printsec=frontcover&dq=Notes+on+complexity&hl=&cd=1&source=gbs_api",
+        "infoLink": "http://books.google.com/books?id=QgQTEQAAQBAJ&dq=Notes+on+complexity&hl=&source=gbs_api",
+        "canonicalVolumeLink": "https://books.google.com/books/about/Notes_on_Complexity.html?hl=&id=QgQTEQAAQBAJ"
+      },
+      "readDate": "2025-03-15",
+      "tags": [
+        "Science"
+      ],
+      "notes": ""
+    },
+    {
       "id": "qgA-zgEACAAJ",
       "volumeInfo": {
         "title": "Kubernetes Networking",
@@ -48,7 +525,27 @@
       "tags": [
         "Kubernetes"
       ],
-      "notes": ""
+      "notes": "",
+      "mindmap": {
+        "nodes": [
+          {
+            "id": "1",
+            "position": {
+              "x": 250,
+              "y": 250
+            },
+            "data": {
+              "label": "Book Concept"
+            },
+            "type": "input",
+            "measured": {
+              "width": 150,
+              "height": 40
+            }
+          }
+        ],
+        "edges": []
+      }
     },
     {
       "id": "r6M4EQAAQBAJ",
@@ -119,5 +616,22 @@
   "topics": [
     "Open AI",
     "OpenAI"
-  ]
+  ],
+  "authorProfiles": {
+    "Karen Hao": {
+      "blog": "",
+      "podcast": "",
+      "linkedin": "",
+      "substack": "",
+      "x": ""
+    },
+    "Robert Reich": {
+      "blog": "",
+      "podcast": "https://podnews.net/podcast/iarue/episodes",
+      "linkedin": "",
+      "substack": "https://robertreich.substack.com/",
+      "x": "https://x.com/RBReich",
+      "rss": ""
+    }
+  }
 }

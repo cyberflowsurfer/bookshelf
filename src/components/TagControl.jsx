@@ -25,12 +25,12 @@ const TagControl = ({ tags = [], onTagsChange, canEdit = true }) => {
 
     return (
         <div>
-            <div className="flex justify-between items-center mb-1">
+            <div className="flex items-center gap-2 mb-1">
                 <span className="block font-medium text-gray-700 text-sm">Tags</span>
                 {canEdit && (
                     <button
                         onClick={() => setIsEditing(!isEditing)}
-                        className="text-gray-400 hover:text-indigo-600 focus:outline-none ml-2"
+                        className="text-gray-400 hover:text-indigo-600 focus:outline-none"
                         title="Edit Tags"
                     >
                         {isEditing ? <Check className="h-4 w-4" /> : <Edit2 className="h-4 w-4" />}
